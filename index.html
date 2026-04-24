@@ -57,7 +57,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-primary svg{width:18px;height:18px;fill:white;flex-shrink:0}
   .btn-secondary{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);font-size:13px;font-weight:500;text-decoration:none;padding:16px 28px;border-radius:4px;border:1px solid rgba(255,255,255,.1);transition:background .2s}
   .btn-secondary:hover{background:rgba(255,255,255,.1)}
-  .scroll-hint{position:absolute;bottom:28px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp 1s ease 1.2s forwards}  .scroll-hint span{font-size:8px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.18)}
+  .scroll-hint{position:absolute;bottom:28px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp 1s ease 1.2s forwards}
+  .scroll-hint span{font-size:8px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.18)}
   .scroll-arrow{width:1px;height:28px;background:linear-gradient(to bottom,rgba(224,120,50,.5),transparent);animation:scrollDown 2s ease-in-out infinite}
   @keyframes scrollDown{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(.4);opacity:.3}}
 
@@ -65,30 +66,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .section-tag{font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;text-align:center}
   .section-title{font-size:clamp(1.7rem,6vw,2.6rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase;text-align:center;margin-bottom:48px}
 
+  /* ═══ SOBRE ═══ */
+  .sobre{background:var(--navy-mid);padding:80px 28px}
+  .sobre-inner{max-width:560px;margin:0 auto}
+  .sobre-card{background:var(--navy-light);border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
+
+  .sobre-top{display:flex;align-items:center;gap:20px;padding:28px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .sobre-foto{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--orange);flex-shrink:0}
+  .sobre-id{}
+  .sobre-nome{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--white);line-height:1.1;margin-bottom:4px}
+  .sobre-cargo{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+
+  .sobre-bio{padding:24px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .sobre-bio p{font-size:13px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8}
+  .sobre-bio p span{color:rgba(255,255,255,.88);font-weight:500}
+
+  .sobre-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+  .sobre-stat{padding:20px 14px;text-align:center;background:rgba(255,255,255,.02)}
+  .sobre-stat-num{font-size:1.3rem;font-weight:900;color:var(--orange-v);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
+  .sobre-stat-label{font-size:7.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+
+  .sobre-badges{display:flex;flex-wrap:wrap;gap:8px;padding:20px 24px;border-top:1px solid rgba(255,255,255,.06)}
+  .sobre-badge{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:5px 12px;border-radius:100px}
+  .sobre-badge.destaque{color:var(--orange);border-color:rgba(224,120,50,.3);background:rgba(224,120,50,.07)}
+  .sobre-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+
   /* ═══ FUNNEL SECTION ═══ */
   .funnel-section{background:var(--cream);padding:80px 28px}
   .funnel-section .section-title{color:var(--navy)}
-
-  /* Funnel rows — each row narrower than previous */
   .funnel-visual{max-width:560px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:3px}
-
-  .frow{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 22px;gap:12px;
-    background:var(--navy-light);
-    border-bottom:1px solid rgba(255,255,255,.05);
-    transition:background .2s;cursor:default;
-    width:100%;
-  }
+  .frow{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;gap:12px;background:var(--navy-light);border-bottom:1px solid rgba(255,255,255,.05);transition:background .2s;cursor:default;width:100%}
   .frow:hover{background:var(--navy-mid)}
-
-  /* Each step slightly narrower — true funnel shape */
   .frow:nth-child(1){width:100%;background:var(--navy-light)}
   .frow:nth-child(2){width:88%;background:var(--navy-mid)}
   .frow:nth-child(3){width:76%;background:var(--navy-light)}
   .frow:nth-child(4){width:62%;background:var(--navy-mid)}
   .frow:nth-child(5){width:46%;background:var(--orange);justify-content:center;text-align:center}
-
   .frow-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
   .frow:nth-child(5) .frow-left{flex:none}
   .frow-step{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);flex-shrink:0;width:20px}
@@ -105,36 +118,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .dashboard-section{background:var(--navy-mid);padding:80px 28px}
   .dashboard-section .section-title{color:var(--white)}
   .dash-wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
-
   .dash-card{background:var(--navy-light);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:20px}
   .dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
   .dash-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4)}
   .dash-live{display:flex;align-items:center;gap:5px;font-size:8.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
   .dash-live::before{content:'';width:5px;height:5px;background:var(--orange);border-radius:50%;animation:blink 1.5s ease infinite}
-
-  /* KPI row */
   .dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:0}
   .dash-kpi{background:rgba(255,255,255,.04);border-radius:4px;padding:12px 10px;text-align:center}
   .dash-kpi-num{font-size:1.15rem;font-weight:900;color:var(--orange-v);letter-spacing:-.02em;line-height:1;margin-bottom:4px}
   .dash-kpi-num.good{color:#4ade80}
   .dash-kpi-num.warn{color:#facc15}
   .dash-kpi-label{font-size:7.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28)}
-
-  /* bar chart */
   .dash-bars{display:flex;align-items:flex-end;gap:4px;height:70px;margin-bottom:14px}
   .dash-bar{flex:1;background:rgba(224,120,50,.2);border-radius:2px 2px 0 0;transition:background .2s}
   .dash-bar:hover{background:rgba(224,120,50,.45)}
   .dash-bar.hi{background:var(--orange)}
-
-  /* funnel mini */
   .dash-funnel{display:flex;flex-direction:column;gap:8px}
   .dash-funnel-row{display:flex;align-items:center;gap:10px}
   .dash-funnel-lbl{font-size:9px;font-weight:600;color:rgba(255,255,255,.38);width:68px;flex-shrink:0;text-transform:uppercase;letter-spacing:.05em}
   .dash-funnel-track{flex:1;height:7px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
   .dash-funnel-bar{height:100%;border-radius:4px;background:var(--orange)}
   .dash-funnel-val{font-size:9px;font-weight:700;color:var(--orange-v);width:32px;text-align:right;flex-shrink:0}
-
-  /* Ads table */
   .ads-table{width:100%;border-collapse:collapse}
   .ads-table thead tr{border-bottom:1px solid rgba(255,255,255,.07)}
   .ads-table th{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.3);padding:6px 8px;text-align:left}
@@ -145,16 +149,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ads-table td:not(:first-child){text-align:right;font-weight:600}
   .ad-name{display:flex;align-items:center;gap:8px}
   .ad-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-  .ad-dot.a{background:#F08030}
-  .ad-dot.b{background:#4ade80}
-  .ad-dot.c{background:#facc15}
-  .ad-dot.d{background:#60a5fa}
+  .ad-dot.a{background:#F08030}.ad-dot.b{background:#4ade80}.ad-dot.c{background:#facc15}.ad-dot.d{background:#60a5fa}
   .badge-status{font-size:7.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:100px}
   .badge-on{background:rgba(74,222,128,.15);color:#4ade80}
   .badge-off{background:rgba(255,255,255,.08);color:rgba(255,255,255,.35)}
-  .val-good{color:#4ade80!important}
-  .val-warn{color:#facc15!important}
-  .val-normal{color:rgba(255,255,255,.7)!important}
+  .val-good{color:#4ade80!important}.val-warn{color:#facc15!important}.val-normal{color:rgba(255,255,255,.7)!important}
 
   /* SERVICES */
   .services{background:var(--navy);padding:80px 28px}
@@ -206,14 +205,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media(min-width:600px){
     .hero-stats{grid-template-columns:repeat(4,1fr)}
     .results-grid{grid-template-columns:repeat(4,1fr);max-width:800px}
+    .sobre-stats{grid-template-columns:repeat(3,1fr)}
   }
   @media(min-width:800px){
     .hero{padding:80px 40px}
-    .hero-inner,.funnel-visual,.dash-wrap,.svc-list,.support-grid,.contact-btns{max-width:620px}
+    .hero-inner,.funnel-visual,.dash-wrap,.svc-list,.support-grid,.contact-btns,.sobre-inner{max-width:620px}
   }
   @media(max-width:400px){
     .fstep-desc{display:none}
     .ads-table td,.ads-table th{padding:8px 5px;font-size:10px}
+    .sobre-top{flex-direction:column;text-align:center}
   }
 </style>
 </head>
@@ -250,52 +251,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="scroll-hint"><span>Ver mais</span><div class="scroll-arrow"></div></div>
 </section>
 
+<!-- SOBRE -->
+<section class="sobre">
+  <p class="section-tag">Quem está por trás</p>
+  <h2 class="section-title" style="color:var(--white)">Matheus<br>Grigoletti</h2>
+  <div class="sobre-inner">
+    <div class="sobre-card">
+
+      <div class="sobre-top">
+        <img
+          class="sobre-foto"
+          src="Matheus - foto sozinho.jpeg"
+          alt="Matheus Grigoletti Gastal"
+        >
+        <div class="sobre-id">
+          <div class="sobre-nome">Matheus Grigoletti Gastal</div>
+          <div class="sobre-cargo">Gestor de Tráfego Pago</div>
+        </div>
+      </div>
+
+      <div class="sobre-bio">
+        <p>
+          <span>5 anos dedicados a tráfego pago</span> — período em que ajudei empresas a movimentar mais de
+          <span>R$350 milhões em vendas com origem online</span> e gerenciei
+          <span>mais de R$10 milhões em investimento em mídia.</span>
+          <br><br>
+          Comecei cedo, fui longe: no primeiro ano já era
+          <span>mentorado do Pedro Sobral</span>, referência nacional em tráfego pago, o que moldou minha visão técnica e estratégica desde o início.
+          Ao longo da jornada, atendi <span>mais de 100 clientes</span> em diferentes segmentos,
+          sempre com foco em dados reais — não em promessas.
+        </p>
+      </div>
+
+      <div class="sobre-stats">
+        <div class="sobre-stat">
+          <div class="sobre-stat-num">5 anos</div>
+          <div class="sobre-stat-label">de experiência</div>
+        </div>
+        <div class="sobre-stat">
+          <div class="sobre-stat-num">+R$10M</div>
+          <div class="sobre-stat-label">gerenciados</div>
+        </div>
+        <div class="sobre-stat">
+          <div class="sobre-stat-num">+100</div>
+          <div class="sobre-stat-label">clientes</div>
+        </div>
+      </div>
+
+      <div class="sobre-badges">
+        <span class="sobre-badge destaque">Mentorado Pedro Sobral</span>
+        <span class="sobre-badge">Meta Ads</span>
+        <span class="sobre-badge">Google Ads</span>
+        <span class="sobre-badge">Rastreamento Avançado</span>
+        <span class="sobre-badge">RD Station</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FUNIL -->
 <section class="funnel-section">
   <p class="section-tag">Metodologia</p>
   <h2 class="section-title">Do clique<br>à venda</h2>
-
   <div class="funnel-visual">
-
-      <div class="frow">
-        <div class="frow-left">
-          <span class="frow-step">01</span>
-          <div><div class="frow-label">Anúncio</div><div class="frow-desc">Segmentação precisa — público certo, canal certo</div></div>
-        </div>
-        <div class="frow-right"><div class="frow-num">100%</div><div class="frow-lbl">do alcance</div></div>
-      </div>
-
-      <div class="frow">
-        <div class="frow-left">
-          <span class="frow-step">02</span>
-          <div><div class="frow-label">Landing Page</div><div class="frow-desc">Conversão otimizada, integrada ao CRM</div></div>
-        </div>
-        <div class="frow-right"><div class="frow-num">72%</div><div class="frow-lbl">captação</div></div>
-      </div>
-
-      <div class="frow">
-        <div class="frow-left">
-          <span class="frow-step">03</span>
-          <div><div class="frow-label">Rastreamento</div><div class="frow-desc">Lead rastreado por origem, canal e anúncio</div></div>
-        </div>
-        <div class="frow-right"><div class="frow-num">562</div><div class="frow-lbl">leads / mês</div></div>
-      </div>
-
-      <div class="frow">
-        <div class="frow-left">
-          <span class="frow-step">04</span>
-          <div><div class="frow-label">Qualificação</div><div class="frow-desc">O que avança x o que gera descarte</div></div>
-        </div>
-        <div class="frow-right"><div class="frow-num">44%</div><div class="frow-lbl">qualificados</div></div>
-      </div>
-
-      <div class="frow">
-        <div class="frow-left">
-          <span class="frow-step">05</span>
-          <div><div class="frow-label">Venda</div></div>
-        </div>
-      </div>
-
+    <div class="frow">
+      <div class="frow-left"><span class="frow-step">01</span><div><div class="frow-label">Anúncio</div><div class="frow-desc">Segmentação precisa — público certo, canal certo</div></div></div>
+      <div class="frow-right"><div class="frow-num">100%</div><div class="frow-lbl">do alcance</div></div>
+    </div>
+    <div class="frow">
+      <div class="frow-left"><span class="frow-step">02</span><div><div class="frow-label">Landing Page</div><div class="frow-desc">Conversão otimizada, integrada ao CRM</div></div></div>
+      <div class="frow-right"><div class="frow-num">72%</div><div class="frow-lbl">captação</div></div>
+    </div>
+    <div class="frow">
+      <div class="frow-left"><span class="frow-step">03</span><div><div class="frow-label">Rastreamento</div><div class="frow-desc">Lead rastreado por origem, canal e anúncio</div></div></div>
+      <div class="frow-right"><div class="frow-num">562</div><div class="frow-lbl">leads / mês</div></div>
+    </div>
+    <div class="frow">
+      <div class="frow-left"><span class="frow-step">04</span><div><div class="frow-label">Qualificação</div><div class="frow-desc">O que avança x o que gera descarte</div></div></div>
+      <div class="frow-right"><div class="frow-num">44%</div><div class="frow-lbl">qualificados</div></div>
+    </div>
+    <div class="frow">
+      <div class="frow-left"><span class="frow-step">05</span><div><div class="frow-label">Venda</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -304,8 +342,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <p class="section-tag">Inteligência em tempo real</p>
   <h2 class="section-title">Dashboard<br>exclusivo</h2>
   <div class="dash-wrap">
-
-    <!-- KPIs gerais -->
     <div class="dash-card">
       <div class="dash-header">
         <span class="dash-title">Visão geral — Abril 2026</span>
@@ -320,127 +356,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="dash-kpi"><div class="dash-kpi-num good">51</div><div class="dash-kpi-label">Vendas</div></div>
       </div>
     </div>
-
-    <!-- Leads por dia -->
     <div class="dash-card">
       <div class="dash-header">
         <span class="dash-title">Leads por dia</span>
         <span style="font-size:9px;color:rgba(255,255,255,.3);font-weight:500;">Últimos 14 dias</span>
       </div>
-      <!-- bar chart + CPL line via SVG -->
       <div style="position:relative;height:80px;margin-bottom:14px;">
         <div class="dash-bars" style="height:100%;position:absolute;inset:0;">
-          <div class="dash-bar" style="height:42%"></div>
-          <div class="dash-bar" style="height:58%"></div>
-          <div class="dash-bar" style="height:35%"></div>
-          <div class="dash-bar" style="height:72%"></div>
-          <div class="dash-bar" style="height:50%"></div>
-          <div class="dash-bar hi" style="height:85%"></div>
-          <div class="dash-bar" style="height:68%"></div>
-          <div class="dash-bar" style="height:55%"></div>
-          <div class="dash-bar" style="height:78%"></div>
-          <div class="dash-bar" style="height:62%"></div>
-          <div class="dash-bar hi" style="height:90%"></div>
-          <div class="dash-bar" style="height:70%"></div>
-          <div class="dash-bar" style="height:65%"></div>
-          <div class="dash-bar hi" style="height:100%"></div>
+          <div class="dash-bar" style="height:42%"></div><div class="dash-bar" style="height:58%"></div>
+          <div class="dash-bar" style="height:35%"></div><div class="dash-bar" style="height:72%"></div>
+          <div class="dash-bar" style="height:50%"></div><div class="dash-bar hi" style="height:85%"></div>
+          <div class="dash-bar" style="height:68%"></div><div class="dash-bar" style="height:55%"></div>
+          <div class="dash-bar" style="height:78%"></div><div class="dash-bar" style="height:62%"></div>
+          <div class="dash-bar hi" style="height:90%"></div><div class="dash-bar" style="height:70%"></div>
+          <div class="dash-bar" style="height:65%"></div><div class="dash-bar hi" style="height:100%"></div>
         </div>
-        <!-- CPL line overlay -->
         <svg viewBox="0 0 280 80" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-          <polyline
-            points="10,52 30,44 50,58 70,36 90,50 110,26 130,38 150,46 170,30 190,40 210,22 230,34 250,38 270,18"
-            fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="10,52 30,44 50,58 70,36 90,50 110,26 130,38 150,46 170,30 190,40 210,22 230,34 250,38 270,18" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
           <circle cx="270" cy="18" r="3" fill="#4ade80"/>
         </svg>
-        <!-- CPL legend -->
         <div style="position:absolute;top:4px;right:0;display:flex;align-items:center;gap:5px;">
           <div style="width:16px;height:2px;background:#4ade80;border-radius:2px;"></div>
           <span style="font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;">CPL</span>
         </div>
       </div>
       <div class="dash-funnel">
-        <div class="dash-funnel-row">
-          <span class="dash-funnel-lbl">Leads</span>
-          <div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:100%"></div></div>
-          <span class="dash-funnel-val">562</span>
-        </div>
-        <div class="dash-funnel-row">
-          <span class="dash-funnel-lbl">Contato</span>
-          <div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:72%"></div></div>
-          <span class="dash-funnel-val">405</span>
-        </div>
-        <div class="dash-funnel-row">
-          <span class="dash-funnel-lbl">Qualif.</span>
-          <div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:44%"></div></div>
-          <span class="dash-funnel-val">248</span>
-        </div>
-        <div class="dash-funnel-row">
-          <span class="dash-funnel-lbl">Visita</span>
-          <div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:22%"></div></div>
-          <span class="dash-funnel-val">124</span>
-        </div>
-        <div class="dash-funnel-row">
-          <span class="dash-funnel-lbl">Venda</span>
-          <div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:9%;background:#4ade80"></div></div>
-          <span class="dash-funnel-val" style="color:#4ade80">51</span>
-        </div>
+        <div class="dash-funnel-row"><span class="dash-funnel-lbl">Leads</span><div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:100%"></div></div><span class="dash-funnel-val">562</span></div>
+        <div class="dash-funnel-row"><span class="dash-funnel-lbl">Contato</span><div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:72%"></div></div><span class="dash-funnel-val">405</span></div>
+        <div class="dash-funnel-row"><span class="dash-funnel-lbl">Qualif.</span><div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:44%"></div></div><span class="dash-funnel-val">248</span></div>
+        <div class="dash-funnel-row"><span class="dash-funnel-lbl">Visita</span><div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:22%"></div></div><span class="dash-funnel-val">124</span></div>
+        <div class="dash-funnel-row"><span class="dash-funnel-lbl">Venda</span><div class="dash-funnel-track"><div class="dash-funnel-bar" style="width:9%;background:#4ade80"></div></div><span class="dash-funnel-val" style="color:#4ade80">51</span></div>
       </div>
     </div>
-
-    <!-- Ads table -->
     <div class="dash-card">
       <div class="dash-header">
         <span class="dash-title">Performance por anúncio</span>
         <span class="dash-live">Meta Ads</span>
       </div>
       <table class="ads-table">
-        <thead>
-          <tr>
-            <th>Anúncio</th>
-            <th>CTR</th>
-            <th>CPL</th>
-            <th>Leads</th>
-            <th>Vendas</th>
-            <th>Status</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Anúncio</th><th>CTR</th><th>CPL</th><th>Leads</th><th>Vendas</th><th>Status</th></tr></thead>
         <tbody>
           <tr>
             <td><div class="ad-name"><div class="ad-dot a"></div><div><div>AD 01</div><div style="font-size:9px;font-weight:400;color:rgba(255,255,255,.35);margin-top:1px;">Público A</div></div></div></td>
-            <td class="val-good">2,4%</td>
-            <td class="val-good">R$28</td>
-            <td>187</td>
-            <td class="val-good">22</td>
-            <td><span class="badge-status badge-on">Ativo</span></td>
+            <td class="val-good">2,4%</td><td class="val-good">R$28</td><td>187</td><td class="val-good">22</td><td><span class="badge-status badge-on">Ativo</span></td>
           </tr>
           <tr>
             <td><div class="ad-name"><div class="ad-dot b"></div><div><div>AD 02</div><div style="font-size:9px;font-weight:400;color:rgba(255,255,255,.35);margin-top:1px;">Público A</div></div></div></td>
-            <td class="val-good">2,1%</td>
-            <td class="val-normal">R$34</td>
-            <td>142</td>
-            <td class="val-good">18</td>
-            <td><span class="badge-status badge-on">Ativo</span></td>
+            <td class="val-good">2,1%</td><td class="val-normal">R$34</td><td>142</td><td class="val-good">18</td><td><span class="badge-status badge-on">Ativo</span></td>
           </tr>
           <tr>
             <td><div class="ad-name"><div class="ad-dot c"></div><div><div>AD 03</div><div style="font-size:9px;font-weight:400;color:rgba(255,255,255,.35);margin-top:1px;">Público B</div></div></div></td>
-            <td class="val-warn">1,3%</td>
-            <td class="val-warn">R$51</td>
-            <td>98</td>
-            <td class="val-normal">8</td>
-            <td><span class="badge-status badge-on">Ativo</span></td>
+            <td class="val-warn">1,3%</td><td class="val-warn">R$51</td><td>98</td><td class="val-normal">8</td><td><span class="badge-status badge-on">Ativo</span></td>
           </tr>
           <tr>
             <td><div class="ad-name"><div class="ad-dot d"></div><div><div>AD 04</div><div style="font-size:9px;font-weight:400;color:rgba(255,255,255,.35);margin-top:1px;">Público B</div></div></div></td>
-            <td class="val-good">3,1%</td>
-            <td class="val-good">R$22</td>
-            <td>135</td>
-            <td class="val-good">3</td>
-            <td><span class="badge-status badge-off">Pausado</span></td>
+            <td class="val-good">3,1%</td><td class="val-good">R$22</td><td>135</td><td class="val-good">3</td><td><span class="badge-status badge-off">Pausado</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </div>
 </section>
 
