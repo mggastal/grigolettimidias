@@ -66,31 +66,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .section-tag{font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;text-align:center}
   .section-title{font-size:clamp(1.7rem,6vw,2.6rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase;text-align:center;margin-bottom:48px}
 
-  /* ═══ SOBRE ═══ */
-  .sobre{background:var(--navy-mid);padding:80px 28px}
-  .sobre-inner{max-width:560px;margin:0 auto}
-  .sobre-card{background:var(--navy-light);border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
-
-  .sobre-top{display:flex;align-items:center;gap:20px;padding:28px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
-  .sobre-foto{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--orange);flex-shrink:0}
-  .sobre-id{}
-  .sobre-nome{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--white);line-height:1.1;margin-bottom:4px}
-  .sobre-cargo{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
-
-  .sobre-bio{padding:24px;border-bottom:1px solid rgba(255,255,255,.06)}
-  .sobre-bio p{font-size:13px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8}
-  .sobre-bio p span{color:rgba(255,255,255,.88);font-weight:500}
-
-  .sobre-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-  .sobre-stat{padding:20px 14px;text-align:center;background:rgba(255,255,255,.02)}
-  .sobre-stat-num{font-size:1.3rem;font-weight:900;color:var(--orange-v);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
-  .sobre-stat-label{font-size:7.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28)}
-
-  .sobre-badges{display:flex;flex-wrap:wrap;gap:8px;padding:20px 24px;border-top:1px solid rgba(255,255,255,.06)}
-  .sobre-badge{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:5px 12px;border-radius:100px}
-  .sobre-badge.destaque{color:var(--orange);border-color:rgba(224,120,50,.3);background:rgba(224,120,50,.07)}
-  .sobre-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
-
   /* ═══ FUNNEL SECTION ═══ */
   .funnel-section{background:var(--cream);padding:80px 28px}
   .funnel-section .section-title{color:var(--navy)}
@@ -192,6 +167,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .contact-sub{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.8;max-width:380px;margin:0 auto 40px}
   .contact-btns{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto}
 
+  /* ═══ SOBRE ═══ */
+  .sobre{background:var(--navy-mid);padding:60px 28px}
+  .sobre-inner{max-width:560px;margin:0 auto;display:flex;align-items:flex-start;gap:28px}
+  .sobre-foto{width:130px;height:240px;object-fit:cover;object-position:center top;flex-shrink:0;border-left:3px solid var(--orange)}
+  .sobre-content{}
+  .sobre-nome{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--white);margin-bottom:3px}
+  .sobre-cargo{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+  .sobre-bio{font-size:12px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.8}
+  .sobre-bio span{color:rgba(255,255,255,.85);font-weight:500}
+  .sobre-tag{display:inline-block;margin-top:14px;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);border:1px solid rgba(224,120,50,.3);padding:4px 10px}
+
+  @media(max-width:480px){
+    .sobre-inner{flex-direction:column;align-items:center;text-align:center}
+    .sobre-foto{width:100%;height:220px}
+  }
+
   /* FOOTER */
   footer{background:#0F1820;padding:28px;text-align:center}
   .footer-logo{font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
@@ -205,7 +196,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media(min-width:600px){
     .hero-stats{grid-template-columns:repeat(4,1fr)}
     .results-grid{grid-template-columns:repeat(4,1fr);max-width:800px}
-    .sobre-stats{grid-template-columns:repeat(3,1fr)}
   }
   @media(min-width:800px){
     .hero{padding:80px 40px}
@@ -214,7 +204,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media(max-width:400px){
     .fstep-desc{display:none}
     .ads-table td,.ads-table th{padding:8px 5px;font-size:10px}
-    .sobre-top{flex-direction:column;text-align:center}
   }
 </style>
 </head>
@@ -249,65 +238,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
   <div class="scroll-hint"><span>Ver mais</span><div class="scroll-arrow"></div></div>
-</section>
-
-<!-- SOBRE -->
-<section class="sobre">
-  <p class="section-tag">Quem está por trás</p>
-  <h2 class="section-title" style="color:var(--white)">Matheus<br>Grigoletti</h2>
-  <div class="sobre-inner">
-    <div class="sobre-card">
-
-      <div class="sobre-top">
-        <img
-          class="sobre-foto"
-          src="Matheus - foto sozinho.jpeg"
-          alt="Matheus Grigoletti Gastal"
-        >
-        <div class="sobre-id">
-          <div class="sobre-nome">Matheus Grigoletti Gastal</div>
-          <div class="sobre-cargo">Gestor de Tráfego Pago</div>
-        </div>
-      </div>
-
-      <div class="sobre-bio">
-        <p>
-          <span>5 anos dedicados a tráfego pago</span> — período em que ajudei empresas a movimentar mais de
-          <span>R$350 milhões em vendas com origem online</span> e gerenciei
-          <span>mais de R$10 milhões em investimento em mídia.</span>
-          <br><br>
-          Comecei cedo, fui longe: no primeiro ano já era
-          <span>mentorado do Pedro Sobral</span>, referência nacional em tráfego pago, o que moldou minha visão técnica e estratégica desde o início.
-          Ao longo da jornada, atendi <span>mais de 100 clientes</span> em diferentes segmentos,
-          sempre com foco em dados reais — não em promessas.
-        </p>
-      </div>
-
-      <div class="sobre-stats">
-        <div class="sobre-stat">
-          <div class="sobre-stat-num">5 anos</div>
-          <div class="sobre-stat-label">de experiência</div>
-        </div>
-        <div class="sobre-stat">
-          <div class="sobre-stat-num">+R$10M</div>
-          <div class="sobre-stat-label">gerenciados</div>
-        </div>
-        <div class="sobre-stat">
-          <div class="sobre-stat-num">+100</div>
-          <div class="sobre-stat-label">clientes</div>
-        </div>
-      </div>
-
-      <div class="sobre-badges">
-        <span class="sobre-badge destaque">Mentorado Pedro Sobral</span>
-        <span class="sobre-badge">Meta Ads</span>
-        <span class="sobre-badge">Google Ads</span>
-        <span class="sobre-badge">Rastreamento Avançado</span>
-        <span class="sobre-badge">RD Station</span>
-      </div>
-
-    </div>
-  </div>
 </section>
 
 <!-- FUNIL -->
@@ -485,6 +415,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       (53) 99175-0788 — WhatsApp
     </a>
     <a class="btn-secondary" href="mailto:matheusgastal@gmail.com">matheusgastal@gmail.com</a>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="sobre-inner">
+    <img class="sobre-foto" src="Matheus - foto sozinho.jpeg" alt="Matheus Grigoletti Gastal">
+    <div class="sobre-content">
+      <div class="sobre-nome">Matheus Grigoletti Gastal</div>
+      <div class="sobre-cargo">Gestor de Tráfego · 5 anos</div>
+      <p class="sobre-bio">
+        Especialista em tráfego pago, focado em transformar <span>investimento em resultado real.</span> Mais do que gerar cliques, construo estratégias que trazem leads qualificados, aumentam vendas e escalam negócios de forma consistente.
+        <br><br>
+        Atuo com planejamento, execução e otimização de campanhas nas principais plataformas, sempre orientado por dados. Cada decisão é baseada em métricas — porque o que importa não é o quanto você investe, mas <span>o retorno que esse investimento gera.</span>
+        <br><br>
+        Ao longo da trajetória, trabalhei com diferentes nichos e objetivos — desde captação de leads até vendas diretas — sempre buscando <span>eficiência, previsibilidade e crescimento sustentável.</span>
+      </p>
+      <span class="sobre-tag">Mentorado Pedro Sobral</span>
+    </div>
   </div>
 </section>
 
