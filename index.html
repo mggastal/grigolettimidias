@@ -76,15 +76,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .frow:nth-child(2){width:88%;background:var(--navy-mid)}
   .frow:nth-child(3){width:76%;background:var(--navy-light)}
   .frow:nth-child(4){width:62%;background:var(--navy-mid)}
-  .frow:nth-child(5){width:46%;background:var(--orange);justify-content:space-between;text-align:left}
+  .frow:nth-child(5){width:50%;background:var(--orange);justify-content:space-between;text-align:left}
   .frow-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
-  .frow:nth-child(5) .frow-left{flex:none}
   .frow-step{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);flex-shrink:0;width:20px}
   .frow:nth-child(5) .frow-step{color:rgba(255,255,255,.7)}
   .frow-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--white)}
   .frow-desc{font-size:11px;font-weight:300;color:rgba(255,255,255,.5);margin-top:2px}
   .frow:nth-child(5) .frow-desc{display:none}
-  @media(max-width:600px){.frow-desc{display:none}}
+  @media(max-width:600px){
+    .frow-desc{display:none}
+    .frow:nth-child(1){width:100%}
+    .frow:nth-child(2){width:92%}
+    .frow:nth-child(3){width:84%}
+    .frow:nth-child(4){width:74%}
+    .frow:nth-child(5){width:62%}
+  }
   .frow-right{text-align:right;flex-shrink:0}
   .frow-num{font-size:1.05rem;font-weight:900;color:var(--orange-v);letter-spacing:-.02em;line-height:1}
   .frow-lbl{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:2px}
@@ -249,23 +255,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="funnel-visual">
     <div class="frow">
       <div class="frow-left"><span class="frow-step">01</span><div><div class="frow-label">Impressões</div><div class="frow-desc">Segmentação precisa — público certo, canal certo</div></div></div>
-      <div class="frow-right"><div class="frow-num">100%</div><div class="frow-lbl">do alcance</div></div>
+      <div class="frow-right"><div class="frow-num">100%</div><div class="frow-lbl">das impressões</div></div>
     </div>
     <div class="frow">
       <div class="frow-left"><span class="frow-step">02</span><div><div class="frow-label">Cliques</div><div class="frow-desc">Anúncios otimizados para máximo CTR</div></div></div>
-      <div class="frow-right"><div class="frow-num">38%</div><div class="frow-lbl">do alcance</div></div>
+      <div class="frow-right"><div class="frow-num">1,8%</div><div class="frow-lbl">das impressões</div></div>
     </div>
     <div class="frow">
       <div class="frow-left"><span class="frow-step">03</span><div><div class="frow-label">Landing Page View</div><div class="frow-desc">Visitantes que chegaram à página de destino</div></div></div>
-      <div class="frow-right"><div class="frow-num">22%</div><div class="frow-lbl">do alcance</div></div>
+      <div class="frow-right"><div class="frow-num">78%</div><div class="frow-lbl">dos cliques</div></div>
     </div>
     <div class="frow">
       <div class="frow-left"><span class="frow-step">04</span><div><div class="frow-label">Leads</div><div class="frow-desc">Formulário preenchido, lead capturado</div></div></div>
-      <div class="frow-right"><div class="frow-num">12%</div><div class="frow-lbl">do alcance</div></div>
+      <div class="frow-right"><div class="frow-num">32%</div><div class="frow-lbl">da LP View</div></div>
     </div>
     <div class="frow">
       <div class="frow-left"><span class="frow-step">05</span><div><div class="frow-label">Venda</div></div></div>
-      <div class="frow-right"><div class="frow-num" style="color:#60a5fa">5%</div><div class="frow-lbl">conversão</div></div>
+      <div class="frow-right"><div class="frow-num" style="color:#fff">5%</div><div class="frow-lbl" style="color:rgba(255,255,255,.5)">dos leads</div></div>
     </div>
   </div>
 </section>
