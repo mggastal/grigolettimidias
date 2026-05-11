@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estratégia de Tráfego — Tchucoo × Grigoletti Mídias</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --orange: #E07832;
+  --navy: #192638;
+  --navy-mid: #1E2F45;
+  --lavanda: #EDEAF4;
+  --lavanda-dark: #DDD9EE;
+  --preto: #111111;
+  --cinza: #666;
+  --tofu: #5B3FE8;
+  --tofu-bg: #EDE9FE;
+  --mofu: #D95F1A;
+  --mofu-bg: #FEF0E7;
+  --bofu: #2A6B28;
+  --bofu-bg: #E7F5E7;
+}
+
+body { font-family: 'Montserrat', sans-serif; background: var(--lavanda); color: var(--preto); -webkit-font-smoothing: antialiased; }
+
+/* HEADER */
+header {
+  background: #fff; border-bottom: 1px solid var(--lavanda-dark);
+  padding: 0 48px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.logo-tchucoo img { height: 26px; display: block; }
+.logo-tchucoo-fb  { font-size: 22px; font-weight: 800; color: var(--preto); display: none; }
+.header-center {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--cinza); background: var(--lavanda); padding: 6px 14px; border-radius: 20px;
+}
+.logo-grig { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); }
+.logo-grig span { color: var(--preto); font-weight: 300; }
+
+/* HERO */
+.hero {
+  background: var(--navy); padding: 72px 48px 64px;
+  position: relative; overflow: hidden;
+}
+.hero-ring {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  border: 1px solid rgba(224,120,50,0.07);
+  animation: ringPulse 7s ease-in-out infinite;
+}
+.hero-ring:nth-child(1) { width:600px;height:600px;top:-200px;right:-200px; }
+.hero-ring:nth-child(2) { width:380px;height:380px;top:40px;right:-60px;animation-delay:2s;border-color:rgba(224,120,50,.04); }
+.hero-ring:nth-child(3) { width:420px;height:420px;bottom:-140px;left:-140px;animation-delay:4s; }
+@keyframes ringPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.05);opacity:.5} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
+.hero-eyebrow {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before { content:''; width:6px;height:6px;background:var(--orange);border-radius:50%;animation:blink 2s ease infinite; }
+.hero h1 {
+  font-size: clamp(32px,5vw,54px); font-weight: 900; line-height: 1.05;
+  letter-spacing: -0.025em; text-transform: uppercase; color:#fff; margin-bottom:20px;
+}
+.hero h1 em { font-style:italic;font-weight:300;color:rgba(255,255,255,.5);text-transform:none; }
+.hero-desc { font-size:15px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.7;max-width:560px;margin-bottom:40px; }
+.hero-desc strong { color:rgba(255,255,255,.85);font-weight:600; }
+.hero-pills { display:flex;gap:10px;flex-wrap:wrap; }
+.pill { font-size:11px;font-weight:700;letter-spacing:.06em;padding:8px 18px;border-radius:100px;border:1px solid; }
+.p-invest { color:#fff;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06); }
+.p-criat  { color:var(--orange);border-color:rgba(224,120,50,.4);background:rgba(224,120,50,.1); }
+.p-camps  { color:#fff;border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.04); }
+
+/* SECTIONS */
+.sec { padding: 72px 48px; }
+.inner { max-width: 960px; margin: 0 auto; }
+.sec-tag { font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:10px; }
+.sec-title { font-size:clamp(24px,3.5vw,38px);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;line-height:1.1;margin-bottom:40px; }
+.sec-title em { font-style:italic;font-weight:300;text-transform:none; }
+
+/* BUDGET */
+.budget-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--lavanda-dark);
+  border-radius:16px;overflow:hidden;border:1px solid var(--lavanda-dark);
+}
+.bc { background:#fff;padding:28px 28px 24px; }
+.bc:first-child { border-radius:16px 0 0 16px; }
+.bc:last-child  { border-radius:0 16px 16px 0; }
+.bc-dot { width:9px;height:9px;border-radius:50%;margin-bottom:10px; }
+.bc-label { font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza);margin-bottom:6px; }
+.bc-pct { font-size:36px;font-weight:900;line-height:1;letter-spacing:-.02em; }
+.bc-val { font-size:14px;font-weight:600;margin-top:4px; }
+.bc-desc { font-size:11px;color:var(--cinza);margin-top:10px;line-height:1.6; }
+
+/* ── FUNIL ── */
+.funil-outer {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--lavanda-dark);
+  padding: 56px 32px 48px;
+}
+
+/* Grid 3 colunas: info-esq | funil | info-dir */
+.funil-row {
+  display: grid;
+  grid-template-columns: 190px 1fr 190px;
+  gap: 0 24px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.funil-row:last-child { margin-bottom: 0; }
+
+.fi-l { text-align: right; }
+.fi-r { text-align: left; }
+.fi-val  { font-size: 20px; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+.fi-pct  { font-size: 11px; font-weight: 700; margin-top: 3px; }
+.fi-desc { font-size: 11px; color: var(--cinza); margin-top: 8px; line-height: 1.55; }
+.fi-num  { font-size: 32px; font-weight: 900; line-height: 1; letter-spacing: -.02em; }
+.fi-ndesc { font-size: 11px; color: var(--cinza); margin-top: 6px; line-height: 1.55; }
+
+/* Formas — sem clip-path, só padding lateral para simular afunilamento */
+.fs-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.fs-tofu {
+  background: var(--tofu-bg);
+  padding: 24px 36px;
+  clip-path: polygon(0% 0%, 100% 0%, 91% 100%, 9% 100%);
+  min-height: 100px;
+}
+.fs-mofu {
+  background: var(--mofu-bg);
+  padding: 24px 24px;
+  clip-path: polygon(9% 0%, 91% 0%, 80% 100%, 20% 100%);
+  min-height: 100px;
+}
+.fs-bofu {
+  background: var(--bofu-bg);
+  /* base mais larga: menos afunilamento */
+  clip-path: polygon(20% 0%, 80% 0%, 68% 100%, 32% 100%);
+  padding: 28px 16px;
+  min-height: 110px;
+}
+
+.fs-tag  { font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 6px; }
+.fs-name { font-size: 18px; font-weight: 900; letter-spacing: -.01em; margin-bottom: 4px; }
+.fs-sub  { font-size: 10px; font-weight: 500; line-height: 1.5; }
+
+/* CARDS */
+.cards { display:flex;flex-direction:column;gap:20px; }
+.card { background:#fff;border-radius:16px;border:1px solid var(--lavanda-dark);overflow:hidden; }
+.card-head { padding:20px 26px;display:flex;align-items:center;gap:16px; }
+.card-icon { width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0; }
+.card-meta { flex:1; }
+.card-name { font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.04em; }
+.card-sub  { font-size:11px;color:var(--cinza);margin-top:3px; }
+.card-num  { font-size:38px;font-weight:900;line-height:1;letter-spacing:-.02em;flex-shrink:0;text-align:right; }
+.card-num-lbl { font-size:10px;color:var(--cinza);text-align:right;margin-top:2px; }
+.card-body { border-top:1px solid var(--lavanda-dark);display:grid;grid-template-columns:1fr 1fr; }
+.camp { padding:20px 24px; }
+.camp + .camp { border-left:1px solid var(--lavanda-dark); }
+.camp-n { font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px; }
+.camp-title { font-size:13px;font-weight:700;margin-bottom:10px; }
+.camp-tags { display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px; }
+.ctag { font-size:10px;font-weight:600;padding:3px 9px;border-radius:12px;background:var(--lavanda);color:var(--cinza); }
+.camp-criat { font-size:11px;font-weight:700;display:flex;align-items:center;gap:7px;margin-bottom:5px; }
+.cball { width:6px;height:6px;border-radius:50%;flex-shrink:0; }
+.camp-obj { font-size:11px;color:var(--cinza); }
+
+/* TOTAL */
+.total-bar {
+  background:var(--navy);color:#fff;border-radius:16px;
+  padding:30px 36px;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;margin-top:40px;flex-wrap:wrap;
+}
+.tbl { font-size:12px;color:rgba(255,255,255,.4);margin-bottom:6px;font-weight:500;text-transform:uppercase;letter-spacing:.06em; }
+.tbv { font-size:40px;font-weight:900;line-height:1;letter-spacing:-.02em; }
+.tb-cols { display:flex;gap:32px;flex-wrap:wrap; }
+.tc { text-align:center; }
+.tc-n { font-size:28px;font-weight:900;line-height:1;letter-spacing:-.02em; }
+.tc-l { font-size:10px;color:rgba(255,255,255,.4);margin-top:5px;line-height:1.4;text-transform:uppercase;letter-spacing:.04em; }
+
+/* GRIG STRIP */
+.grig-strip {
+  background:var(--navy);padding:48px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.grig-tag {
+  font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.grig-tag::before { content:'';width:5px;height:5px;background:var(--orange);border-radius:50%;animation:blink 2s ease infinite; }
+.grig-title { font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;margin-bottom:6px; }
+.grig-sub { font-size:13px;font-weight:300;color:rgba(255,255,255,.4); }
+.grig-contact { font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.04em; }
+.grig-email { font-size:11px;color:rgba(255,255,255,.3);margin-top:5px; }
+
+/* FOOTER */
+footer {
+  background:#0F1820;padding:24px 48px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-left { display:flex;align-items:center;gap:20px; }
+.footer-sep { width:1px;height:28px;background:rgba(255,255,255,.12); }
+.footer-tchucoo img { height:18px;filter:invert(1) brightness(2);opacity:.45; }
+.footer-tchucoo-fb { font-size:14px;font-weight:700;color:rgba(255,255,255,.35); }
+.footer-grig { font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--orange); }
+.footer-grig span { color:rgba(255,255,255,.3);font-weight:300; }
+.footer-right { font-size:9px;letter-spacing:.12em;color:rgba(255,255,255,.2);text-transform:uppercase; }
+
+@media (max-width: 760px) {
+  header,.hero,.sec,.grig-strip { padding-left:20px;padding-right:20px; }
+  .funil-row { grid-template-columns:1fr;gap:12px; }
+  .fi-l,.fi-r { text-align:center; }
+  .fs-tofu,.fs-mofu,.fs-bofu { clip-path:none;border-radius:10px; }
+  .card-body,.budget-grid { grid-template-columns:1fr; }
+  .budget-grid { background:none;gap:10px; }
+  .bc { border-radius:12px!important;border:1px solid var(--lavanda-dark); }
+  .camp+.camp { border-left:none;border-top:1px solid var(--lavanda-dark); }
+  footer,.grig-strip { flex-direction:column;align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-tchucoo">
+    <img src="tchucoo.png" alt="Tchucoo"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="logo-tchucoo-fb">tchucoo</span>
+  </div>
+  <div class="header-center">Estratégia de Tráfego Pago · 2025</div>
+  <div class="logo-grig">GRIGOLETTI <span>MÍDIAS</span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Proposta de estrutura inicial · E-commerce · Tchucoo</p>
+    <h1>Funil completo de<br>tráfego pago<br><em>para a Tchucoo</em></h1>
+    <p class="hero-desc">Estrutura de campanhas cobrindo todas as etapas do funil — da descoberta até o remarketing. <strong>Distribuição de verba, campanhas e criativos</strong> para apresentar ao designer.</p>
+    <div class="hero-pills">
+      <span class="pill p-invest">R$ 5.000 / mês</span>
+      <span class="pill p-criat">14 criativos</span>
+      <span class="pill p-camps">5 campanhas</span>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="sec" style="background:var(--lavanda);">
+  <div class="inner">
+    <p class="sec-tag">Distribuição de verba</p>
+    <h2 class="sec-title">Como o investimento<br><em>se divide no funil</em></h2>
+    <div class="budget-grid">
+      <div class="bc">
+        <div class="bc-dot" style="background:var(--tofu)"></div>
+        <div class="bc-label">Topo de funil</div>
+        <div class="bc-pct" style="color:var(--tofu)">60%</div>
+        <div class="bc-val" style="color:var(--tofu)">R$ 3.000</div>
+        <div class="bc-desc">Público frio por interesses + Lookalike.<br>Descoberta e geração de pixel.</div>
+      </div>
+      <div class="bc">
+        <div class="bc-dot" style="background:var(--mofu)"></div>
+        <div class="bc-label">Meio de funil</div>
+        <div class="bc-pct" style="color:var(--mofu)">30%</div>
+        <div class="bc-val" style="color:var(--mofu)">R$ 1.500</div>
+        <div class="bc-desc">Engajados e seguidores.<br>Nutrição e consideração.</div>
+      </div>
+      <div class="bc">
+        <div class="bc-dot" style="background:var(--bofu)"></div>
+        <div class="bc-label">Fundo de funil</div>
+        <div class="bc-pct" style="color:var(--bofu)">10%</div>
+        <div class="bc-val" style="color:var(--bofu)">R$ 500</div>
+        <div class="bc-desc">Remarketing da LP.<br>Conversão direta.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNIL -->
+<section class="sec" style="background:#fff;">
+  <div class="inner">
+    <p class="sec-tag">Visualização do funil</p>
+    <h2 class="sec-title">As três etapas<br><em>da jornada</em></h2>
+
+    <div class="funil-outer">
+
+      <!-- TOPO -->
+      <div class="funil-row">
+        <div class="fi-l">
+          <div class="fi-val" style="color:var(--tofu)">R$ 3.000</div>
+          <div class="fi-pct" style="color:var(--tofu)">60% do investimento</div>
+          <div class="fi-desc">2 campanhas<br>Interesses + Lookalike 1–3%</div>
+        </div>
+        <div class="fs-block fs-tofu">
+          <div class="fs-tag" style="color:var(--tofu)">Topo de funil</div>
+          <div class="fs-name" style="color:var(--tofu)">Descoberta</div>
+          <div class="fs-sub" style="color:#7C6FBE">Interesses pet &amp; lifestyle · Lookalike</div>
+        </div>
+        <div class="fi-r">
+          <div class="fi-num" style="color:var(--tofu)">6</div>
+          <div class="fi-ndesc">criativos<br>3 estáticos · 1 carrossel<br>2 Reels</div>
+        </div>
+      </div>
+
+      <!-- MEIO -->
+      <div class="funil-row">
+        <div class="fi-l">
+          <div class="fi-val" style="color:var(--mofu)">R$ 1.500</div>
+          <div class="fi-pct" style="color:var(--mofu)">30% do investimento</div>
+          <div class="fi-desc">1 campanha<br>Seguidores e engajados</div>
+        </div>
+        <div class="fs-block fs-mofu">
+          <div class="fs-tag" style="color:var(--mofu)">Meio de funil</div>
+          <div class="fs-name" style="color:var(--mofu)">Consideração</div>
+          <div class="fs-sub" style="color:#B06030">Seguidores · Engajados · Perfil</div>
+        </div>
+        <div class="fi-r">
+          <div class="fi-num" style="color:var(--mofu)">4</div>
+          <div class="fi-ndesc">criativos<br>Prova social · Depoimento<br>Oferta</div>
+        </div>
+      </div>
+
+      <!-- FUNDO -->
+      <div class="funil-row">
+        <div class="fi-l">
+          <div class="fi-val" style="color:var(--bofu)">R$ 500</div>
+          <div class="fi-pct" style="color:var(--bofu)">10% do investimento</div>
+          <div class="fi-desc">2 campanhas<br>Remarketing e carrinho</div>
+        </div>
+        <div class="fs-block fs-bofu">
+          <div class="fs-tag" style="color:var(--bofu)">Fundo de funil</div>
+          <div class="fs-name" style="color:var(--bofu)">Conversão</div>
+          <div class="fs-sub" style="color:#4A7A4A">Remarketing LP · Carrinho Abandonado</div>
+        </div>
+        <div class="fi-r">
+          <div class="fi-num" style="color:var(--bofu)">4</div>
+          <div class="fi-ndesc">criativos<br>Cupom · Prova social<br>Urgência · Oferta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAMPANHAS -->
+<section class="sec" style="background:var(--lavanda);">
+  <div class="inner">
+    <p class="sec-tag">Estrutura de campanhas</p>
+    <h2 class="sec-title">Cada campanha<br><em>detalhada</em></h2>
+    <div class="cards">
+
+      <!-- TOPO -->
+      <div class="card">
+        <div class="card-head" style="background:var(--tofu-bg);">
+          <div class="card-icon" style="background:#DDD8FA;">🔍</div>
+          <div class="card-meta">
+            <div class="card-name" style="color:var(--tofu)">Topo de funil — Descoberta</div>
+            <div class="card-sub">Público frio + Lookalike · R$ 3.000 · 60% · 6 criativos compartilhados</div>
+          </div>
+          <div>
+            <div class="card-num" style="color:var(--tofu)">6</div>
+            <div class="card-num-lbl">criativos</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="camp">
+            <div class="camp-n" style="color:var(--tofu)">Campanha 01</div>
+            <div class="camp-title">Interesse: Pet &amp; Lifestyle</div>
+            <div class="camp-tags">
+              <span class="ctag">Donos de gato</span>
+              <span class="ctag">Donos de cachorro</span>
+              <span class="ctag">Moda pet</span>
+            </div>
+            <div class="camp-criat"><span class="cball" style="background:var(--tofu)"></span>Os mesmos 6 criativos do topo</div>
+            <div class="camp-obj">Objetivo: Tráfego LP / Alcance</div>
+          </div>
+          <div class="camp">
+            <div class="camp-n" style="color:var(--tofu)">Campanha 02</div>
+            <div class="camp-title">Lookalike 1–3% Compradores</div>
+            <div class="camp-tags">
+              <span class="ctag">Similar a compradores</span>
+              <span class="ctag">Similar a seguidores</span>
+            </div>
+            <div class="camp-criat"><span class="cball" style="background:var(--tofu)"></span>3 estáticos · 1 carrossel · 2 Reels</div>
+            <div class="camp-obj">Objetivo: Tráfego LP / Alcance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEIO -->
+      <div class="card">
+        <div class="card-head" style="background:var(--mofu-bg);">
+          <div class="card-icon" style="background:#FAE0C8;">💬</div>
+          <div class="card-meta">
+            <div class="card-name" style="color:var(--mofu)">Meio de funil — Consideração</div>
+            <div class="card-sub">Seguidores + Engajados · R$ 1.500 · 30%</div>
+          </div>
+          <div>
+            <div class="card-num" style="color:var(--mofu)">4</div>
+            <div class="card-num-lbl">criativos</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="camp" style="grid-column: 1 / -1;">
+            <div class="camp-n" style="color:var(--mofu)">Campanha 03</div>
+            <div class="camp-title">Seguidores + Engajados</div>
+            <div class="camp-tags">
+              <span class="ctag">Curtiu / Salvou</span>
+              <span class="ctag">Comentou</span>
+              <span class="ctag">Visitou perfil</span>
+              <span class="ctag">Interagiu com posts</span>
+            </div>
+            <div class="camp-criat"><span class="cball" style="background:var(--mofu)"></span>4 criativos — prova social, depoimento, oferta</div>
+            <div class="camp-obj">Objetivo: Conversão / Tráfego LP</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FUNDO -->
+      <div class="card">
+        <div class="card-head" style="background:var(--bofu-bg);">
+          <div class="card-icon" style="background:#C2E4C2;">🎯</div>
+          <div class="card-meta">
+            <div class="card-name" style="color:var(--bofu)">Fundo de funil — Conversão</div>
+            <div class="card-sub">Remarketing · R$ 500 · 10%</div>
+          </div>
+          <div>
+            <div class="card-num" style="color:var(--bofu)">4</div>
+            <div class="card-num-lbl">criativos</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="camp">
+            <div class="camp-n" style="color:var(--bofu)">Campanha 04</div>
+            <div class="camp-title">Remarketing LP</div>
+            <div class="camp-tags">
+              <span class="ctag">Pixel 7–30 dias</span>
+              <span class="ctag">Sem conversão</span>
+            </div>
+            <div class="camp-criat"><span class="cball" style="background:var(--bofu)"></span>2 criativos — cupom + urgência</div>
+            <div class="camp-obj">Objetivo: Conversão</div>
+          </div>
+          <div class="camp">
+            <div class="camp-n" style="color:var(--bofu)">Campanha 05</div>
+            <div class="camp-title">Carrinho Abandonado</div>
+            <div class="camp-tags">
+              <span class="ctag">Add to cart</span>
+              <span class="ctag">Checkout sem compra</span>
+            </div>
+            <div class="camp-criat"><span class="cball" style="background:var(--bofu)"></span>2 criativos — prova social + oferta</div>
+            <div class="camp-obj">Objetivo: Conversão</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TOTAL -->
+    <div class="total-bar">
+      <div>
+        <div class="tbl">Total de criativos para o designer</div>
+        <div class="tbv">14 criativos</div>
+      </div>
+      <div class="tb-cols">
+        <div class="tc">
+          <div class="tc-n" style="color:#A78BFA">6</div>
+          <div class="tc-l">Topo<br>estáticos + carrossel + Reels</div>
+        </div>
+        <div class="tc">
+          <div class="tc-n" style="color:#FB923C">4</div>
+          <div class="tc-l">Meio<br>social + depoimento</div>
+        </div>
+        <div class="tc">
+          <div class="tc-n" style="color:#86EFAC">4</div>
+          <div class="tc-l">Fundo<br>cupom + urgência + oferta</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STRIP GRIGOLETTI -->
+<div class="grig-strip">
+  <div>
+    <div class="grig-tag">Gestão de Tráfego Pago</div>
+    <div class="grig-title">GRIGOLETTI <span style="font-weight:300;color:rgba(255,255,255,.4)">MÍDIAS</span></div>
+    <div class="grig-sub">Performance digital orientada por dados.</div>
+  </div>
+  <div>
+    <div class="grig-contact">(53) 99175-0788 · WhatsApp</div>
+    <div class="grig-email">matheusgastal@gmail.com</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-tchucoo">
+      <img src="tchucoo.png" alt="Tchucoo"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-tchucoo-fb">tchucoo</span>
+    </div>
+    <div class="footer-sep"></div>
+    <div class="footer-grig">GRIGOLETTI <span>MÍDIAS</span></div>
+  </div>
+  <div class="footer-right">Estratégia de tráfego pago · 2025</div>
+</footer>
+
+</body>
+</html>
